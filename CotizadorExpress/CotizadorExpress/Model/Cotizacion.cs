@@ -66,9 +66,9 @@ namespace CotizadorExpress.Model
         }
 
         //Constructores
-        public Cotizacion(string sellerCode, Prenda item, int unit, double result)
+        public Cotizacion(int id, string sellerCode, Prenda item, int unit, double result)
         {
-            this.id++;
+            this.id = id;
             this.created = DateTime.Now;
             this.sellerCode = sellerCode;
             this.item = item;

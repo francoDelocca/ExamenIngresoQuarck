@@ -24,6 +24,17 @@ namespace CotizadorExpress.Controller
             string type = item.GetType().Name;
             VendedorController vendedor = new VendedorController();
             TiendaController tienda = new TiendaController();
+            var lastCoti = Vendedor.cotizaciones.LastOrDefault();
+            var id = 0;
+
+            if (lastCoti == null)
+            {
+                id = 1;
+            }
+            else
+            {
+                id = lastCoti.Id + 1;
+            }
 
             switch (type)
             {
@@ -54,7 +65,7 @@ namespace CotizadorExpress.Controller
                     }
                     
 
-                    Cotizacion cotizacionCamisa = new Cotizacion(sellerCode, camisa, int.Parse(unit), total);
+                    Cotizacion cotizacionCamisa = new Cotizacion(id, sellerCode, camisa, int.Parse(unit), total);
 
                     vendedor.AddCotizacion(cotizacionCamisa);
                     break;
@@ -81,7 +92,7 @@ namespace CotizadorExpress.Controller
                         return -1d;
                     }
 
-                    Cotizacion cotizacionPantalon = new Cotizacion(sellerCode, pantalon, int.Parse(unit), total);
+                    Cotizacion cotizacionPantalon = new Cotizacion(id, sellerCode, pantalon, int.Parse(unit), total);
                     vendedor.AddCotizacion(cotizacionPantalon);
                     break;
                 default:
