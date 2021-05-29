@@ -1,5 +1,9 @@
 # ExamenIngresoQuarck
 
+Pasos para iniciar el programa
+
+1. Abrir el CotizadorExpress.exe en la raiz del proyecto
+
 PARTE H
 
 Por favor, especifica tu nombre completo: Franco Delocca
