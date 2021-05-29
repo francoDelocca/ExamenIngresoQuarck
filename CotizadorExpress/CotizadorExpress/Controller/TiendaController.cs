@@ -116,12 +116,7 @@ namespace CotizadorExpress.Controller
                         {
                             if (panta.Chupines)
                             {
-                                if (!(panta.Stock - cantidad < 0))
-                                {
-                                    panta.Stock -= cantidad;
-                                    return;
-                                }
-                                else
+                                if (panta.Stock - cantidad < 0)
                                 {
                                     throw new Exception();
                                 }
@@ -129,11 +124,7 @@ namespace CotizadorExpress.Controller
                             //stock += panta.Stock;
                         }
                         //panta.Stock -= cantidad;
-                        if (!(panta.Stock - cantidad < 0))
-                        {
-                            panta.Stock -= cantidad;
-                        }
-                        else
+                        if (panta.Stock - cantidad < 0)
                         {
                             throw new Exception();
                         }
@@ -147,14 +138,11 @@ namespace CotizadorExpress.Controller
                     {
                         if (camisa.MangaCorta && camisa.Mao)
                         {
-                            if (!(camisa.Stock - cantidad < 0))
-                            {
-                                camisa.Stock -= cantidad;
-                            }
-                            else
+                            if (camisa.Stock - cantidad < 0)
                             {
                                 throw new Exception();
                             }
+                            
                             
 
                         }
@@ -163,11 +151,7 @@ namespace CotizadorExpress.Controller
                     {
                         if (camisa.MangaCorta && !camisa.Mao)
                         {
-                            if (!(camisa.Stock - cantidad < 0))
-                            {
-                                camisa.Stock -= cantidad;
-                            }
-                            else
+                            if (camisa.Stock - cantidad < 0)
                             {
                                 throw new Exception();
                             }
@@ -177,11 +161,7 @@ namespace CotizadorExpress.Controller
                     {
                         if (!camisa.MangaCorta && !camisa.Mao)
                         {
-                            if (!(camisa.Stock - cantidad < 0))
-                            {
-                                camisa.Stock -= cantidad;
-                            }
-                            else
+                            if (camisa.Stock - cantidad < 0)
                             {
                                 throw new Exception();
                             }
@@ -191,11 +171,7 @@ namespace CotizadorExpress.Controller
                     {
                         if (!camisa.MangaCorta && camisa.Mao)
                         {
-                            if (!(camisa.Stock - cantidad < 0))
-                            {
-                                camisa.Stock -= cantidad;
-                            }
-                            else
+                            if (camisa.Stock - cantidad < 0)
                             {
                                 throw new Exception();
                             }
