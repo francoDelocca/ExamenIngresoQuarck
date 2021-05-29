@@ -18,6 +18,12 @@ namespace CotizadorExpress
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Una vez que carga el formulario instancio la tienda con sus datos y el vendedor
+        /// y coloco la informacion de esos objeto en sus labels
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             TiendaController tienda = new TiendaController();
@@ -35,6 +41,13 @@ namespace CotizadorExpress
             this.lblNomApe.Text = seller.Name + " " + seller.Surname;
         }
 
+        /// <summary>
+        /// Cuando apreto el boton de "cotizar" capturo los valores de todos los elementos
+        /// del formulario, creo los objetos dependiendo de el tipo elegido y los mando como parametro
+        /// a la funcion de cotizar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             string calidad = rdPremium.Checked ? "Premium" : rdStandar.Checked ? "Standar" : "Standar";
@@ -92,6 +105,10 @@ namespace CotizadorExpress
             }
         }
 
+        /// <summary>
+        /// Cada vez que cambio de tipo de prenda deshabilito las caracteristicas irrelevantes para ese item
+        /// y habilito las que si importan
+        /// </summary>
         private void rdPantalon_CheckedChanged(object sender, EventArgs e)
         {
             
@@ -107,7 +124,12 @@ namespace CotizadorExpress
         }
 
 
-
+        /// <summary>
+        /// Cada vez que cambio de tipo de prenda deshabilito las caracteristicas irrelevantes para ese item
+        /// y habilito las que si importan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rdCamisa_CheckedChanged(object sender, EventArgs e)
         {
             if (rdCamisa.Checked)
@@ -121,6 +143,11 @@ namespace CotizadorExpress
 
         }
 
+        /// <summary>
+        /// Cuando apreto el boton que me muesta el historial lo voy a buscar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblLinkHistorial_Click(object sender, EventArgs e)
         {
             CotizacionController cotizacion = new CotizacionController();
@@ -128,11 +155,25 @@ namespace CotizadorExpress
             MessageBox.Show(cotizacion.GetHistory());
         }
 
+
         private void chkChupin_CheckedChanged(object sender, EventArgs e)
         {
             CheckStock();
         }
 
+        private void chkMangaCorta_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckStock();
+        }
+
+        private void chkCuelloMao_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckStock();
+        }
+
+        /// <summary>
+        /// Checkeo el stock de la lista de stock de la tienda
+        /// </summary>
         private void CheckStock()
         {
             bool isPantalon = rdPantalon.Checked;
@@ -146,14 +187,6 @@ namespace CotizadorExpress
             lblStock.Text = stock.ToString();
         }
 
-        private void chkMangaCorta_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckStock();
-        }
 
-        private void chkCuelloMao_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckStock();
-        }
     }
 }

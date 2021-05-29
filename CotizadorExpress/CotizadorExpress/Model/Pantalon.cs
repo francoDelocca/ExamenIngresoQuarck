@@ -8,8 +8,10 @@ namespace CotizadorExpress.Model
 {
     public class Pantalon : Prenda
     {
+        //Atributos
         private bool chupines;
 
+        //Propiedades
         public bool Chupines
         {
             get
@@ -18,6 +20,7 @@ namespace CotizadorExpress.Model
             }
         }
 
+        //Constructores
         public Pantalon() { }
 
         public Pantalon(int stock, bool chupines) : base(stock)

@@ -8,12 +8,14 @@ namespace CotizadorExpress.Model
 {
     public class Vendedor
     {
+        //Atributos
         private string name;
         private string surname;
         private string code;
 
         public static List<Cotizacion> cotizaciones = new List<Cotizacion>();
 
+        //Propiedades
         public string Name 
         {
             get
@@ -41,7 +43,7 @@ namespace CotizadorExpress.Model
             
         }
 
-
+        //Constructores
         public Vendedor()
         {
             this.name = "";

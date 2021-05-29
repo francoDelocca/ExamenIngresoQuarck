@@ -8,9 +8,11 @@ namespace CotizadorExpress.Model
 {
     public class Camisa : Prenda
     {
+        //Atributos
         private bool mangaCorta;
         private bool mao;
 
+        //Propiedades
         public bool MangaCorta
         {
             get
@@ -28,6 +30,7 @@ namespace CotizadorExpress.Model
             }
         }
 
+        //Constructores
         public Camisa()
         {
         }

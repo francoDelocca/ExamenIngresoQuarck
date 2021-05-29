@@ -8,10 +8,12 @@ namespace CotizadorExpress.Model
 {
     public class Prenda
     {
+        //Atributos
         protected string quality;
         protected int stock;
         protected double price;
 
+        //Propiedades
         public string Quality
         {
             get
@@ -40,6 +42,7 @@ namespace CotizadorExpress.Model
             }
         }
 
+        //Constructores
         public Prenda()
         {
 

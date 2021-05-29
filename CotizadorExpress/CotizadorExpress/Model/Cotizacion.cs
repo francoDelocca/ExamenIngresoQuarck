@@ -8,6 +8,7 @@ namespace CotizadorExpress.Model
 {
     public class Cotizacion
     {
+        //Atributos
         private int id;
         private DateTime created;
         private string sellerCode;
@@ -15,6 +16,7 @@ namespace CotizadorExpress.Model
         private int unit;
         private double result;
 
+        //Propiedades
         public int Id 
         {
             get
@@ -63,6 +65,7 @@ namespace CotizadorExpress.Model
             }
         }
 
+        //Constructores
         public Cotizacion(string sellerCode, Prenda item, int unit, double result)
         {
             this.id++;

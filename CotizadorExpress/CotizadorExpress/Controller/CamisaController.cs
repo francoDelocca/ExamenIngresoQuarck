@@ -9,6 +9,15 @@ namespace CotizadorExpress.Controller
 {
     public class CamisaController
     {
+        /// <summary>
+        /// Creo un objeto de tipo camisa y lo devuelvo
+        /// </summary>
+        /// <param name="mangaCorta"></param>
+        /// <param name="cuelloMao"></param>
+        /// <param name="calidad"></param>
+        /// <param name="precio"></param>
+        /// <param name="cantidad"></param>
+        /// <returns></returns>
         public Camisa CreateCamisa(bool mangaCorta, bool cuelloMao, string calidad, string precio, string cantidad = "0")
         {
             int cantidadNew = int.Parse(cantidad);

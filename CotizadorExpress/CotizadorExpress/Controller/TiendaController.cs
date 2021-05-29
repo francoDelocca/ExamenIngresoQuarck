@@ -9,7 +9,10 @@ namespace CotizadorExpress.Controller
 {
     public class TiendaController
     {
-
+        /// <summary>
+        /// Instancio un objeto del tipo tienda y asigno la lista de items
+        /// </summary>
+        /// <returns></returns>
         public Tienda InstantiateTienda()
         {
             Tienda tienda = new Tienda("Ropa de locos", "Av.Mitre 275");
@@ -18,6 +21,10 @@ namespace CotizadorExpress.Controller
             return tienda;
         }
 
+        /// <summary>
+        /// Creo la lista de los items de la tienda con su stock
+        /// </summary>
+        /// <returns></returns>
         private List<Prenda> CreateItems()
         {
             List<Prenda> list = new List<Prenda>();
@@ -40,6 +47,14 @@ namespace CotizadorExpress.Controller
             return list;
         }
 
+        /// <summary>
+        /// Voy a buscar el stock en toda la lista de items en venta de la tienda y los filtro por los parametros
+        /// </summary>
+        /// <param name="isPantalon"></param>
+        /// <param name="isChupin"></param>
+        /// <param name="isMangaCorta"></param>
+        /// <param name="isMao"></param>
+        /// <returns></returns>
         public int CheckStock(bool isPantalon, bool isChupin, bool isMangaCorta, bool isMao)
         {
             var stock = 0;
@@ -102,6 +117,15 @@ namespace CotizadorExpress.Controller
             return stock;
         }
 
+        /// <summary>
+        /// Voy a ver el stock de los items y me fijo si el stock actual - la cantidad de items que se van a cotizar es mayor a 0
+        /// si es mayor a 0 no hago nada y si es menor lanzo una exception que luego voy a capturar
+        /// </summary>
+        /// <param name="isPantalon"></param>
+        /// <param name="isChupin"></param>
+        /// <param name="isMangaCorta"></param>
+        /// <param name="isMao"></param>
+        /// <param name="cantidad"></param>
         public void RestarStock(bool isPantalon, bool isChupin, bool isMangaCorta, bool isMao, int cantidad)
         {
             foreach (var item in Tienda.items)

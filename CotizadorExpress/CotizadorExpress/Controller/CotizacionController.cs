@@ -9,9 +9,18 @@ namespace CotizadorExpress.Controller
 {
     public class CotizacionController
     {
+        /// <summary>
+        /// Creo una cotizacion, me fijo el tipo de dato que me llega, y lo meto en un switch
+        /// dependiendo de las caracteristicas de las prendas manejo el total y una vez hecho eso
+        /// checkeo si el stock me va a quedar en 0, si es asi retorno un -1
+        /// </summary>
+        /// <param name="sellerCode"></param>
+        /// <param name="item"></param>
+        /// <param name="unit"></param>
+        /// <returns></returns>
         public double CreateCotizacion(string sellerCode,object item,string unit)
         {
-            var total = 0.00;
+            var total = 0d;
             string type = item.GetType().Name;
             VendedorController vendedor = new VendedorController();
             TiendaController tienda = new TiendaController();
@@ -41,7 +50,7 @@ namespace CotizadorExpress.Controller
                     catch (Exception)
                     {
 
-                        return -1.0;
+                        return -1d;
                     }
                     
 
@@ -69,7 +78,7 @@ namespace CotizadorExpress.Controller
                     catch (Exception)
                     {
 
-                        return -1.0;
+                        return -1d;
                     }
 
                     Cotizacion cotizacionPantalon = new Cotizacion(sellerCode, pantalon, int.Parse(unit), total);
@@ -82,6 +91,10 @@ namespace CotizadorExpress.Controller
             return total;
         }
 
+        /// <summary>
+        /// Recorro la lista de cotizaciones del vendedor y armo un string con cada una de ellas
+        /// </summary>
+        /// <returns></returns>
         public string GetHistory()
         {
             StringBuilder sb = new StringBuilder();

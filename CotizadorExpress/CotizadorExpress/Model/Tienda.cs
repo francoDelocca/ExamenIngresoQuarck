@@ -8,10 +8,12 @@ namespace CotizadorExpress.Model
 {
     public class Tienda
     {
+        //Atributos
         private string name;
         private string address;
         public static List<Prenda> items;
 
+        //Propiedades
         public string Name 
         { 
             get 
@@ -28,6 +30,7 @@ namespace CotizadorExpress.Model
             }
         }
 
+        //Constructores
         public Tienda()
         {
 
